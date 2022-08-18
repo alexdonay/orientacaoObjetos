@@ -49,6 +49,8 @@ namespace orientacaoObjetos
             Dados dados = Dados.Instance;
             Conta contaSaque = dados.listarContasPorID(Convert.ToInt32(txCodigoContaSaque.Text));
             contaSaque.Saca(Convert.ToDouble(txValorSaque.Text));
+            txCodigoContaSaque.Text = ""
+            txValorSaque.Text = ""
         }
 
         private void btnTransfere_Click(object sender, EventArgs e)
@@ -57,8 +59,10 @@ namespace orientacaoObjetos
             Conta contaOrigem = dados.listarContasPorID(Convert.ToInt32(txContaOrigemTransferencia.Text));
             Conta contaDestino = dados.listarContasPorID(Convert.ToInt32(txCodigoContaDestinoTransferencia.Text));
             contaOrigem.transfere(Convert.ToDouble(txValorTransferencia.Text),contaDestino);
+            txContaOrigemTransferencia.Text = "";
+            txCodigoContaDestinoTransferencia.Text = "";
+            txValorTransferencia.Text = "";
+            
         }
     }
-
-   
 }
