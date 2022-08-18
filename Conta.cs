@@ -22,28 +22,28 @@ namespace orientacaoObjetos
 			if (this.saldoDaConta >= valor)
 			{
 				this.saldoDaConta -= valor;
-				MessageBox.Show($"o saldo atual da conta {this.numeroDaConta} é {this.saldoDaConta}");
+				MessageBox.Show($"o saldo atual da conta {this.numeroDaConta} é: {this.saldoDaConta}");
 				return true;
-            }
-            else
-            {
+            		}
+            		else
+            		{
 				MessageBox.Show("Saldo insuficiente");
 				return false;
-            }
+            		}
 		}
+		
 		public void deposita(double valor)
-        {
+        	{
 			this.saldoDaConta += valor;
-        }
+			MessageBox.Show($"o saldo atual da conta {this.numeroDaConta} é: {this.saldoDaConta}");
+        	}
+		
 		public void transfere(double valor, Conta contaDestino)
-        {
-            if (this.Saca(valor))
-            {
+       		{
+            		if (this.Saca(valor))
+            		{
 				contaDestino.deposita(valor);
-
 			}
-
 		}
 	}
-
 }
