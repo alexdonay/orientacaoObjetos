@@ -37,7 +37,7 @@ namespace orientacaoObjetos
             string message = "";
             foreach(Conta conta in contas)
             {
-                message = message +  "Código da conta: " +conta.numeroDaConta + "\n Titular: " + conta.titularConta +"\n";
+                message = message +  "Código da conta: " +conta.numeroDaConta + " Titular: " + conta.titularConta + " Saldo: "+ conta.saldoDaConta + "\n";
             }
             
             MessageBox.Show(message);
@@ -49,7 +49,15 @@ namespace orientacaoObjetos
             Dados dados = Dados.Instance;
             Conta contaSaque = dados.listarContasPorID(Convert.ToInt32(txCodigoContaSaque.Text));
             contaSaque.Saca(Convert.ToDouble(txValorSaque.Text));
-        }   
+        }
+
+        private void btnTransfere_Click(object sender, EventArgs e)
+        {
+            Dados dados = Dados.Instance;
+            Conta contaOrigem = dados.listarContasPorID(Convert.ToInt32(txContaOrigemTransferencia.Text));
+            Conta contaDestino = dados.listarContasPorID(Convert.ToInt32(txCodigoContaDestinoTransferencia.Text));
+            contaOrigem.transfere(Convert.ToDouble(txValorTransferencia.Text),contaDestino);
+        }
     }
 
    

@@ -44,7 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txCodigoContaDestinoTransferencia = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txValorTransferencia = new System.Windows.Forms.TextBox();
             this.btnTransfere = new System.Windows.Forms.Button();
             this.lblContaOrigem = new System.Windows.Forms.Label();
             this.txContaOrigemTransferencia = new System.Windows.Forms.TextBox();
@@ -185,12 +185,12 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Valor";
             // 
-            // textBox3
+            // txValorTransferencia
             // 
-            this.textBox3.Location = new System.Drawing.Point(450, 167);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 15;
+            this.txValorTransferencia.Location = new System.Drawing.Point(450, 167);
+            this.txValorTransferencia.Name = "txValorTransferencia";
+            this.txValorTransferencia.Size = new System.Drawing.Size(100, 20);
+            this.txValorTransferencia.TabIndex = 15;
             // 
             // btnTransfere
             // 
@@ -200,6 +200,7 @@
             this.btnTransfere.TabIndex = 14;
             this.btnTransfere.Text = "Transfere";
             this.btnTransfere.UseVisualStyleBackColor = true;
+            this.btnTransfere.Click += new System.EventHandler(this.btnTransfere_Click);
             // 
             // lblContaOrigem
             // 
@@ -238,7 +239,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txCodigoContaDestinoTransferencia);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txValorTransferencia);
             this.Controls.Add(this.btnTransfere);
             this.Controls.Add(this.lblCodContaSaque);
             this.Controls.Add(this.txCodigoContaSaque);
@@ -278,7 +279,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txCodigoContaDestinoTransferencia;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txValorTransferencia;
         private System.Windows.Forms.Button btnTransfere;
         private System.Windows.Forms.Label lblContaOrigem;
         private System.Windows.Forms.TextBox txContaOrigemTransferencia;
